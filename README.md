@@ -9,11 +9,12 @@ Please follow the steps below to get a local version of this application up and 
 
 1. install node.js https://nodejs.org/en/download/
 2. downgrade version of node with `npm install -g node@14.16.0`
-3. run `npm install yarn`
-4. navigate to the project folder
-5. run `yarn add .\package.json`
-6. run `yarn serve`
-7. open localhost:8080 in your browser and click on "Home"
+3. run `npm install -g yarn`
+4. run `npm install -g @vue/cli`
+5. navigate to the project folder
+6. run `yarn add .\package.json`
+7. run `yarn serve`
+8. open localhost:8080 in your browser and click on "Home"
 
 ## Application testing
 
