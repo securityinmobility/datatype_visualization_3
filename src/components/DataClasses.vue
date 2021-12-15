@@ -7,14 +7,18 @@
           label="Choose context"
           outlined
           :value="getContext"
+          v-model="selectedContext"
+          @input="submitDataContext()"
         ></v-select>
       </v-col>
       <v-col>
         <v-select
-          :items="car_model"
+          :items="carmodel"
           label="Choose car model"
           outlined
           :value="getCarmodel"
+          v-model="selectedCarmodel"
+          @input="submitDataCarmodel()"
         ></v-select>
       </v-col>
       <v-col></v-col>
@@ -210,13 +214,15 @@
 export default {
   data: () => ({
     contexts: ["Accident", "Theft"],
-    car_model: ["Tesla Model 3 2015"],
+    carmodel: ["Tesla Model 3 2015"],
     datatype: "",
     radiusFirmware: "100",
     radiusSecurity: "100",
     radiusSafety: "100",
     radiusUser: "100",
     radiusCommunication: "100",
+    selectedContext: "",
+    selectedCarmodel: "",
   }),
 
   computed: {
@@ -237,6 +243,17 @@ export default {
     },
   },
 
+  methods: {
+    submitDataContext() {
+      this.$store.commit("setContext", this.selectedContext);
+      console.log("[Dataclasses] "+ this.getContext)
+    },
+    submitDataCarmodel() {
+      this.$store.commit("setCarmodel", this.selectedCarmodel);
+      console.log("[Dataclasses] "+ this.getCarmodel)
+    }
+  },
+
   mounted() {
     // Code that will run only after the
     // entire view has been rendered
@@ -244,16 +261,55 @@ export default {
       this.getContext == "Accident" &&
       this.getCarmodel == "Tesla Model 3 (2015)"
     ) {
-      this.radiusFirmware = this.getRadius2;
+      this.radiusFirmware = this.getRadius1;
       this.radiusSafety = this.getRadius2;
-      this.radiusSecurity = this.getRadius2;
+      this.radiusSecurity = this.getRadius1;
+      this.radiusUser = this.getRadius2;
+      this.radiusCommunication = this.getRadius2;
+      console.log("mounted")
     } else if (
       this.getContext == "Theft" &&
       this.getCarmodel == "Tesla Model 3 (2015)"
     ) {
       this.radiusUser = this.getRadius2;
       this.radiusCommunication = this.getRadius2;
+      this.radiusFirmware = this.getRadius1;
+      this.radiusSecurity = this.getRadius2;
+      this.radiusSafety = this.getRadius1;
+      console.log("mounted")
     }
   },
+
+  updated () {
+    if (
+      this.getContext == "Accident" &&
+      this.getCarmodel == "Tesla Model 3 (2015)"
+    ) {
+      this.radiusFirmware = this.getRadius1;
+      this.radiusSafety = this.getRadius2;
+      this.radiusSecurity = this.getRadius1;
+      this.radiusUser = this.getRadius2;
+      this.radiusCommunication = this.getRadius2;
+      console.log("updated")
+    } else if (
+      this.getContext == "Theft" &&
+      this.getCarmodel == "Tesla Model 3 (2015)"
+    ) {
+      this.radiusUser = this.getRadius2;
+      this.radiusCommunication = this.getRadius2;
+      this.radiusFirmware = this.getRadius1;
+      this.radiusSecurity = this.getRadius2;
+      this.radiusSafety = this.getRadius1;
+      console.log("updated")
+    }
+    else if (this.getContext == "Accident" &&
+      this.getCarmodel == "Audi A3"){
+        this.radiusUser = this.getRadius2;
+      this.radiusCommunication = this.getRadius1;
+      this.radiusFirmware = this.getRadius2;
+      this.radiusSecurity = this.getRadius1;
+      this.radiusSafety = this.getRadius1;
+      }
+  }
 };
 </script>
