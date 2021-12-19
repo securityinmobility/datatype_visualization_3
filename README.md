@@ -7,14 +7,13 @@ The focus solely lies on the visualization and no other functionality is planned
 
 Please follow the steps below to get a local version of this application up and running:
 
-1. install node.js https://nodejs.org/en/download/
-2. downgrade version of node with `npm install -g node@14.16.0`
-3. run `npm install -g yarn`
-4. run `npm install -g @vue/cli`
-5. use your console of choice and navigate to the project folder you downloaded from github
-6. run `yarn add .\package.json` on Windows or `yarn add ./package.json`
-7. run `yarn serve`
-8. open localhost:8080 in your browser and click on "Home"
+1. install node.js the LTS version 16.13.1 https://nodejs.org/en/download/
+2. run `npm install -g yarn`
+3. run `npm install -g @vue/cli`
+4. use your console of choice and navigate to the project folder you downloaded from this repository
+5. run `yarn add .\package.json` on Windows or `yarn add ./package.json`
+6. run `yarn serve`
+7. open localhost:8080 in your browser and click on "Home"
 
 ## Application testing
 
