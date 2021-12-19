@@ -12,7 +12,7 @@ Please follow the steps below to get a local version of this application up and 
 3. run `npm install -g yarn`
 4. run `npm install -g @vue/cli`
 5. use your console of choice and navigate to the project folder you downloaded from github
-6. run `yarn add .\package.json`
+6. run `yarn add .\package.json` on Windows or `yarn add ./package.json`
 7. run `yarn serve`
 8. open localhost:8080 in your browser and click on "Home"
 
