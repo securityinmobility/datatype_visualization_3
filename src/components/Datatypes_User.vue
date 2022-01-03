@@ -1,5 +1,11 @@
 <template>
   <v-container fill-height fluid>
+    <v-row></v-row>
+    <v-row p-5>
+      <router-link to="/dataclasses" style="cursor: pointer; text-decoration: none; color: inherit;">
+          <v-btn text color="primary"><v-icon>arrow_back</v-icon></v-btn>
+        </router-link>
+    </v-row>
     <v-row align-content="center" justify-content="center">
       <v-col
         ><svg

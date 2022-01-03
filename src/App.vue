@@ -30,7 +30,7 @@ export default {
       appTitle: "ADFDataVis",
       sidebar: false,
       menuItems: [
-        { title: "Home", path: "/home", icon: "home" },
+        { title: "Home", path: "/", icon: "home" },
         { title: "Dataclasses", path: "/dataclasses", icon: "dashboard" },
       ],
     };

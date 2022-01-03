@@ -6,7 +6,7 @@ Vue.use(Router);
 const routerOptions = [
   { path: "/datacomponents", component: "DataComponents" },
   { path: "/dataclasses", component: "DataClasses" },
-  { path: "/home", component: "Home" },
+  { path: "/", component: "Home" },
 ];
 
 const routes = routerOptions.map(route => {

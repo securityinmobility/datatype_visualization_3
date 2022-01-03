@@ -1,5 +1,5 @@
 const state = {
-    datatype: "Datatypes_Communication",
+    datatype: "",
     carmodel: "",
     context: "",
     radius1: "100",

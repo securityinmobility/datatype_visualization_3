@@ -1,6 +1,13 @@
 <template>
   <v-container fill-height fluid>
-    <svg
+    <v-row></v-row>
+    <v-row p-5>
+      <router-link to="/dataclasses" style="cursor: pointer; text-decoration: none; color: inherit;">
+          <v-btn text color="primary"><v-icon>arrow_back</v-icon></v-btn>
+        </router-link>
+    </v-row>
+    <v-row>
+      <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
@@ -161,6 +168,7 @@
       />
       <text class="cls-20" transform="translate(909 444)">Firmware</text>
     </svg>
+    </v-row>
   </v-container>
 </template>
 <script>

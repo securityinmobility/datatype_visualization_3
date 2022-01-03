@@ -1,5 +1,11 @@
 <template>
   <v-container fill-height fluid>
+    <v-row></v-row>
+    <v-row p-5>
+      <router-link to="/dataclasses" style="cursor: pointer; text-decoration: none; color: inherit;">
+          <v-btn text color="primary"><v-icon>arrow_back</v-icon></v-btn>
+        </router-link>
+    </v-row>
     <v-row class="svg">
       <v-col>
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 870">

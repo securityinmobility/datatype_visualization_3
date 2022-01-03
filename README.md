@@ -19,7 +19,7 @@ Please follow the steps below to get a local version of this application up and 
 4. Clone this repository and navigate to the cloned folder
 5. Run `yarn add .\package.json` on Windows or `yarn add package.json` on Linux to add all package requirements
 6. Run `yarn serve` to start the server
-7. Open [localhost:8080](localhost:8080) in your browser and click on "Home"
+7. Open [localhost:8080](localhost:8080) in your browser
 
 ## Vue project
 
@@ -36,6 +36,6 @@ Please follow the steps below to get a local version of this application up and 
 
 ## Feedback
 
-Please send me your feedback and the questionnaires via email to [julian.gaensbauer@outlook.de](mailto:julian.gaensbauer@outlook.de).
+Please send me your feedback and the questionnaires via email to [julian.gaensbauer@outlook.de](mailto:jug4571@thi.de).
 
 > Thank you for participating!
