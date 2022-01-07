@@ -6,7 +6,7 @@
         <v-col md3>
           <v-select
             v-model="selectedContext"
-            :items="contexts"
+            :items="getContextOptions"
             label="Choose context"
             outlined
           ></v-select>
@@ -14,7 +14,7 @@
         <v-col md3>
           <v-select
             v-model="selectedCarmodel"
-            :items="car_model"
+            :items="getCarmodelOptions"
             label="Choose car model"
             outlined
           ></v-select>
@@ -35,8 +35,6 @@
 export default {
   name: "Home",
   data: () => ({
-    contexts: ["Accident (Question of guilt)", "Theft"],
-    car_model: ["Tesla Model 3 (2015)"],
     selectedContext: "",
     selectedCarmodel: "",
   }),
@@ -48,6 +46,12 @@ export default {
     getContext() {
       return this.$store.getters.getContext;
     },
+    getContextOptions () {
+      return this.$store.getters.getContextOptions;
+    },
+    getCarmodelOptions () {
+      return this.$store.getters.getCarmodelOptions;
+    }
   },
 
   methods: {

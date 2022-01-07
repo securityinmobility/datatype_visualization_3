@@ -1,26 +1,27 @@
 <template>
-  <v-container fill-height>    
+  <v-container fill-height>
     <v-row>
-      <router-link to="/" style="cursor: pointer; text-decoration: none; color: inherit;">
-          <v-btn text color="primary"><v-icon>arrow_back</v-icon></v-btn>
-        </router-link> 
+      <router-link
+        to="/"
+        style="cursor: pointer; text-decoration: none; color: inherit"
+      >
+        <v-btn text color="primary"><v-icon>arrow_back</v-icon></v-btn>
+      </router-link>
       <v-col>
         <v-select
           v-model="selectedContext"
-          :items="contexts"
+          :items="getContextOptions"
           label="Choose context"
           outlined
-          :value="getContext"
           @input="submitDataContext()"
         ></v-select>
       </v-col>
       <v-col>
         <v-select
           v-model="selectedCarmodel"
-          :items="carmodel"
+          :items="getCarmodelOptions"
           label="Choose car model"
           outlined
-          :value="getCarmodel"
           @input="submitDataCarmodel()"
         ></v-select>
       </v-col>
@@ -216,11 +217,6 @@
 <script>
 export default {
   data: () => ({
-    // In store packen
-  
-    contexts: ["Accident (Question of guilt)", "Theft"],
-    carmodel: ["Tesla Model 3 (2015)"],
-
     datatype: "",
     radiusFirmware: "100",
     radiusSecurity: "100",
@@ -247,6 +243,12 @@ export default {
     getRadius2() {
       return this.$store.getters.getRadius2;
     },
+    getContextOptions() {
+      return this.$store.getters.getContextOptions;
+    },
+    getCarmodelOptions() {
+      return this.$store.getters.getCarmodelOptions;
+    }
   },
 
   methods: {
@@ -259,6 +261,29 @@ export default {
       this.$store.commit("setCarmodel", this.selectedCarmodel);
       console.log("[Dataclasses Carmodel 2] " + this.getCarmodel);
     },
+    adaptCircleSize() {
+      if (
+        this.getContext == "Accident (Question of guilt)" &&
+        this.getCarmodel == "Tesla Model 3 (2015)"
+      ) {
+        this.radiusFirmware = this.getRadius1;
+        this.radiusSafety = this.getRadius2;
+        this.radiusSecurity = this.getRadius1;
+        this.radiusUser = this.getRadius2;
+        this.radiusCommunication = this.getRadius2;
+        console.log("mounted");
+      } else if (
+        this.getContext == "Theft" &&
+        this.getCarmodel == "Tesla Model 3 (2015)"
+      ) {
+        this.radiusUser = this.getRadius2;
+        this.radiusCommunication = this.getRadius2;
+        this.radiusFirmware = this.getRadius1;
+        this.radiusSecurity = this.getRadius2;
+        this.radiusSafety = this.getRadius1;
+        console.log("mounted");
+      }
+    },
   },
 
   mounted() {
@@ -267,57 +292,11 @@ export default {
     this.selectedContext = this.getContext;
     this.selectedCarmodel = this.getCarmodel;
 
-    if (
-      this.getContext == "Accident (Question of guilt)" &&
-      this.getCarmodel == "Tesla Model 3 (2015)"
-    ) {
-      this.radiusFirmware = this.getRadius1;
-      this.radiusSafety = this.getRadius2;
-      this.radiusSecurity = this.getRadius1;
-      this.radiusUser = this.getRadius2;
-      this.radiusCommunication = this.getRadius2;
-      console.log("mounted");
-    } else if (
-      this.getContext == "Theft" &&
-      this.getCarmodel == "Tesla Model 3 (2015)"
-    ) {
-      this.radiusUser = this.getRadius2;
-      this.radiusCommunication = this.getRadius2;
-      this.radiusFirmware = this.getRadius1;
-      this.radiusSecurity = this.getRadius2;
-      this.radiusSafety = this.getRadius1;
-      console.log("mounted");
-    }
+    this.adaptCircleSize();
   },
 
   updated() {
-    if (
-      this.getContext == "Accident (Question of guilt)" &&
-      this.getCarmodel == "Tesla Model 3 (2015)"
-    ) {
-      this.radiusFirmware = this.getRadius1;
-      this.radiusSafety = this.getRadius2;
-      this.radiusSecurity = this.getRadius1;
-      this.radiusUser = this.getRadius2;
-      this.radiusCommunication = this.getRadius2;
-      console.log("updated");
-    } else if (
-      this.getContext == "Theft" &&
-      this.getCarmodel == "Tesla Model 3 (2015)"
-    ) {
-      this.radiusUser = this.getRadius2;
-      this.radiusCommunication = this.getRadius2;
-      this.radiusFirmware = this.getRadius1;
-      this.radiusSecurity = this.getRadius2;
-      this.radiusSafety = this.getRadius1;
-      console.log("updated");
-    } else if (this.getContext == "Accident (Question of guilt)" && this.getCarmodel == "Audi A3") {
-      this.radiusUser = this.getRadius2;
-      this.radiusCommunication = this.getRadius1;
-      this.radiusFirmware = this.getRadius2;
-      this.radiusSecurity = this.getRadius1;
-      this.radiusSafety = this.getRadius1;
-    }
+    this.adaptCircleSize();
   },
 };
 </script>
