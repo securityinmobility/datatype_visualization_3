@@ -6,20 +6,20 @@
         </router-link> 
       <v-col>
         <v-select
-          :items="contexts"
-          label="Choose context"
+          v-model="selectedCarmodel"
+          :items="carmodel"
+          label="Choose car model"
           outlined
-          :value="getContext"
-          @input="submitDataContext()"
+          @input="submitDataCarmodel()"
         ></v-select>
       </v-col>
       <v-col>
         <v-select
-          :items="carmodel"
-          label="Choose car model"
+          v-model="selectedContext"
+          :items="contexts"
+          label="Choose context"
           outlined
-          :value="getCarmodel"
-          @input="submitDataCarmodel()"
+          @input="submitDataContext()"
         ></v-select>
       </v-col>
       <v-col></v-col>
@@ -214,8 +214,11 @@
 <script>
 export default {
   data: () => ({
-    contexts: ["Accident", "Theft"],
-    carmodel: ["Tesla Model 3 2015"],
+    // In store packen
+  
+    contexts: ["Accident (Question of guilt)", "Theft"],
+    carmodel: ["Tesla Model 3 (2015)"],
+
     datatype: "",
     radiusFirmware: "100",
     radiusSecurity: "100",
@@ -247,19 +250,23 @@ export default {
   methods: {
     submitDataContext() {
       this.$store.commit("setContext", this.selectedContext);
-      console.log("[Dataclasses] " + this.getContext);
+      console.log("[Dataclasses Context] " + this.getContext);
     },
     submitDataCarmodel() {
+      console.log("[Dataclasses Carmodel 1] " + this.selectedCarmodel);
       this.$store.commit("setCarmodel", this.selectedCarmodel);
-      console.log("[Dataclasses] " + this.getCarmodel);
+      console.log("[Dataclasses Carmodel 2] " + this.getCarmodel);
     },
   },
 
   mounted() {
     // Code that will run only after the
     // entire view has been rendered
+    this.selectedContext = this.getContext;
+    this.selectedCarmodel = this.getCarmodel;
+
     if (
-      this.getContext == "Accident" &&
+      this.getContext == "Accident (Question of guilt)" &&
       this.getCarmodel == "Tesla Model 3 (2015)"
     ) {
       this.radiusFirmware = this.getRadius1;
@@ -283,7 +290,7 @@ export default {
 
   updated() {
     if (
-      this.getContext == "Accident" &&
+      this.getContext == "Accident (Question of guilt)" &&
       this.getCarmodel == "Tesla Model 3 (2015)"
     ) {
       this.radiusFirmware = this.getRadius1;
@@ -302,7 +309,7 @@ export default {
       this.radiusSecurity = this.getRadius2;
       this.radiusSafety = this.getRadius1;
       console.log("updated");
-    } else if (this.getContext == "Accident" && this.getCarmodel == "Audi A3") {
+    } else if (this.getContext == "Accident (Question of guilt)" && this.getCarmodel == "Audi A3") {
       this.radiusUser = this.getRadius2;
       this.radiusCommunication = this.getRadius1;
       this.radiusFirmware = this.getRadius2;

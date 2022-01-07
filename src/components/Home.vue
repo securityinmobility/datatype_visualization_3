@@ -22,7 +22,7 @@
         <v-col md3> </v-col>
       </v-row>
       <v-row justify="center">
-        <router-link to="/dataclasses" style="cursor: pointer">
+        <router-link to="/dataclasses" style="cursor: pointer; text-decoration: none; color: inherit;">
           <v-btn outlined text color="primary" @click="submitData()">
             Submit
           </v-btn>
@@ -35,7 +35,7 @@
 export default {
   name: "Home",
   data: () => ({
-    contexts: ["Accident", "Theft"],
+    contexts: ["Accident (Question of guilt)", "Theft"],
     car_model: ["Tesla Model 3 (2015)"],
     selectedContext: "",
     selectedCarmodel: "",
