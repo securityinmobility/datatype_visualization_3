@@ -6,20 +6,22 @@
         </router-link> 
       <v-col>
         <v-select
-          v-model="selectedCarmodel"
-          :items="carmodel"
-          label="Choose car model"
-          outlined
-          @input="submitDataCarmodel()"
-        ></v-select>
-      </v-col>
-      <v-col>
-        <v-select
           v-model="selectedContext"
           :items="contexts"
           label="Choose context"
           outlined
+          :value="getContext"
           @input="submitDataContext()"
+        ></v-select>
+      </v-col>
+      <v-col>
+        <v-select
+          v-model="selectedCarmodel"
+          :items="carmodel"
+          label="Choose car model"
+          outlined
+          :value="getCarmodel"
+          @input="submitDataCarmodel()"
         ></v-select>
       </v-col>
       <v-col></v-col>
