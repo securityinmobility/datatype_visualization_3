@@ -6,8 +6,16 @@ The focus solely lies on the visualization and no other functionality is planned
 ## How to work with the framwork?
 
 1. Go through the [setup of the project provided below](#project-setup)
-2. Play with the [vue project](#vue-project) (this repo) and fill out the [questionnaire](https://github.com/JulianGaensbauer/datatype_visualization_3/tree/master/Questionnaire)
+2. Play with the [Vue project](#vue-project) (this repo) and fill out the [questionnaire](https://github.com/JulianGaensbauer/datatype_visualization_3/tree/master/Questionnaire)
 3. Play with the [Adobe Xd project](#adobe-xd-project) and fill out the [questionnaire](https://github.com/JulianGaensbauer/datatype_visualization_3/tree/master/Questionnaire)
+
+## Information about the used questionnaire
+
+After testing the Vue project prototype and after testing the Adobe Xd project prototype, the UEQ (User Experience Questionnaire) has to be filled out. The questionnaire is based on sementic differential, where the user has to decide which of two words with opposite meanings more likely applies to the tested product. An example would be the words attractive and unattractive. Now the user has to choose on a seven point Likert scale, which word they think applies more to the product.
+
+The questionnaire has to be filled out two times, one time for the Vue project prototype and one seperate time for the Adobe Xd project prototype. This is necessary to be able to compare the results of both visualizations.
+
+A short introduction to how the UEQ is used, is included in the questionnaire itself. The handbook is only to provide further information on the questionnaire.
 
 ## Project setup
 
