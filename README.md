@@ -44,6 +44,6 @@ Please follow the steps below to get a local version of this application up and 
 
 ## Feedback
 
-Please send me your feedback and the questionnaires via email to [julian.gaensbauer@outlook.de](mailto:jug4571@thi.de).
+Please send me your feedback and the questionnaires via email to [jug4571@thi.de](mailto:jug4571@thi.de).
 
 > Thank you for participating!
