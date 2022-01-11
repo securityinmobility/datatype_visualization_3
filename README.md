@@ -17,6 +17,8 @@ The questionnaire has to be filled out two times, one time for the Vue project p
 
 A short introduction to how the UEQ is used, is included in the questionnaire itself. The handbook is only to provide further information on the questionnaire.
 
+The data collected through the questionnaire will only be used in the context of this bachelor thesis and will not be given to any other parties.
+
 ## Project setup
 
 Please follow the steps below to get a local version of this application up and running:
