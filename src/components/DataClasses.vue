@@ -57,7 +57,7 @@
                   opacity="0.25"
                 />
                 <text
-                  fill="#ffffff"
+                  fill="#707070"
                   font-size="25"
                   font-family="Roboto"
                   x="90"
@@ -93,7 +93,7 @@
                   opacity="0.25"
                 />
                 <text
-                  fill="#ffffff"
+                  fill="#707070"
                   font-size="25"
                   font-family="Roboto"
                   x="100"
@@ -127,7 +127,7 @@
                   opacity="0.25"
                 />
                 <text
-                  fill="#ffffff"
+                  fill="#707070"
                   font-size="25"
                   font-family="Roboto"
                   x="110"
@@ -161,7 +161,7 @@
                   opacity="0.25"
                 />
                 <text
-                  fill="#ffffff"
+                  fill="#707070"
                   font-size="25"
                   font-family="Roboto"
                   x="120"
@@ -197,7 +197,7 @@
                   opacity="0.25"
                 />
                 <text
-                  fill="#ffffff"
+                  fill="#707070"
                   font-size="25"
                   font-family="Roboto"
                   x="55"
